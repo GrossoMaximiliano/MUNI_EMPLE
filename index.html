@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empleo Local · Las Toscas, Santa Fe</title>
+<meta name="description" content="Plataforma municipal de empleo y oficios para Las Toscas, Santa Fe: buscá trabajo, encontrá profesionales de confianza y publicá búsquedas laborales.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#/" data-nav="home">
+      <img class="brand-logo" src="assets/logo.png" alt="Empleo Local · Las Toscas, Santa Fe" width="447" height="447">
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#/" data-nav="home">Inicio</a>
+      <a href="#/empleos" data-nav="empleos">Buscar empleo</a>
+      <a href="#/profesionales" data-nav="profesionales">Profesionales</a>
+      <a href="#/mis-publicaciones" data-nav="mis-publicaciones">Mis publicaciones</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline btn-sm hide-sm" href="#/ofrecer-servicios">Ofrecer servicios</a>
+      <a class="btn btn-primary btn-sm" href="#/publicar">Publicar búsqueda</a>
+      <button id="menu-btn" class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
+        <span data-icon="menu" data-size="22"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- ==================== VISTA: INICIO ==================== -->
+<section id="view-home" class="view" aria-labelledby="home-title">
+  <div class="hero">
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">Plataforma municipal de empleo y oficios</p>
+      <h1 class="hero-title" id="home-title">Las oportunidades están <span class="accent">más cerca</span> de lo que pensás.</h1>
+      <p class="hero-sub">Encontrá trabajo, descubrí profesionales de tu ciudad o conectá con personas que necesitan tus habilidades.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#/empleos"><span data-icon="search" data-size="19"></span>Buscar empleo</a>
+        <a class="btn btn-secondary btn-lg" href="#/profesionales"><span data-icon="users" data-size="19"></span>Encontrar un profesional</a>
+      </div>
+      <a class="hero-link" href="#/ofrecer-servicios">Quiero ofrecer mis servicios<span class="hero-link-arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="home-section" aria-labelledby="quick-title">
+      <h2 class="section-title" id="quick-title">¿Qué querés hacer hoy?</h2>
+      <div class="quick-grid">
+        <a class="quick-card" href="#/empleos">
+          <span class="quick-icon" data-icon="briefcase" data-size="22"></span>
+          <span class="quick-body"><strong>Buscar empleo</strong><span>Ofertas publicadas por comercios y empresas de la zona.</span></span>
+          <span class="quick-go" data-icon="arrow-right" data-size="18"></span>
+        </a>
+        <a class="quick-card" href="#/profesionales">
+          <span class="quick-icon" data-icon="wrench" data-size="22"></span>
+          <span class="quick-body"><strong>Encontrar profesionales</strong><span>Oficios y servicios de vecinos que trabajan en tu ciudad.</span></span>
+          <span class="quick-go" data-icon="arrow-right" data-size="18"></span>
+        </a>
+        <a class="quick-card" href="#/publicar">
+          <span class="quick-icon" data-icon="plus" data-size="22"></span>
+          <span class="quick-body"><strong>Publicar una búsqueda</strong><span>¿Necesitás personal? Cargá tu oferta en pocos minutos.</span></span>
+          <span class="quick-go" data-icon="arrow-right" data-size="18"></span>
+        </a>
+        <a class="quick-card" href="#/ofrecer-servicios">
+          <span class="quick-icon" data-icon="user-plus" data-size="22"></span>
+          <span class="quick-body"><strong>Ofrecer mis servicios</strong><span>Creá tu perfil profesional y mostrá tu trabajo.</span></span>
+          <span class="quick-go" data-icon="arrow-right" data-size="18"></span>
+        </a>
+      </div>
+    </section>
+    <section class="home-section" aria-labelledby="recent-jobs-title">
+      <div class="section-head">
+        <h2 class="section-title" id="recent-jobs-title">Ofertas de empleo recientes</h2>
+        <a class="see-all" href="#/empleos">Ver todas<span data-icon="arrow-right" data-size="16"></span></a>
+      </div>
+      <div id="home-jobs" class="card-grid jobs-grid"></div>
+    </section>
+
+    <section class="home-section" aria-labelledby="featured-pros-title">
+      <div class="section-head">
+        <h2 class="section-title" id="featured-pros-title">Profesionales destacados</h2>
+        <a class="see-all" href="#/profesionales">Ver directorio<span data-icon="arrow-right" data-size="16"></span></a>
+      </div>
+      <div id="home-pros" class="card-grid pros-grid"></div>
+    </section>
+
+    <section class="institutional" aria-labelledby="inst-title">
+      <span class="inst-icon" data-icon="shield" data-size="26"></span>
+      <div>
+        <h2 class="section-title" id="inst-title">Una iniciativa para acercar oportunidades</h2>
+        <p>Empleo Local es una propuesta municipal para que vecinos, comercios y trabajadores de Las Toscas se encuentren en un mismo lugar: publicar y encontrar trabajo, y poner en contacto a quienes necesitan un servicio con quienes lo saben hacer.</p>
+        <p class="demo-note">Prototipo de demostración: las ofertas, los perfiles y los datos de contacto son ejemplos y no constituyen publicaciones reales.</p>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- ==================== VISTA: BUSCAR EMPLEO ==================== -->
+<section id="view-empleos" class="view" hidden aria-labelledby="empleos-title">
+  <div class="container">
+    <header class="page-head">
+      <h1 id="empleos-title">Buscar empleo</h1>
+      <p class="page-sub">Ofertas publicadas por comercios, empresas y vecinos de la región.</p>
+    </header>
+
+    <div class="search-bar" role="search">
+      <span class="search-icon" data-icon="search" data-size="18"></span>
+      <input id="jobs-search" type="search" placeholder="Buscar por puesto, empresa o palabra clave" aria-label="Buscar ofertas por puesto, empresa o palabra clave" autocomplete="off">
+    </div>
+
+    <div class="list-layout">
+      <button id="jobs-filter-toggle" class="btn btn-outline filters-toggle" type="button" aria-expanded="false" aria-controls="jobs-filter-panel">
+        <span data-icon="sliders" data-size="18"></span>Filtros<span id="jobs-filter-count" class="chip-mini" hidden>0</span>
+      </button>
+
+      <aside id="jobs-filter-panel" class="filter-panel" aria-label="Filtros de ofertas de empleo" hidden>
+        <div class="filter-head">
+          <h2>Filtrar ofertas</h2>
+          <button id="jobs-clear" class="link-btn" type="button">Limpiar</button>
+        </div>
+        <div class="field">
+          <label for="jobs-cat">Categoría</label>
+          <select id="jobs-cat"><option value="">Todas las categorías</option></select>
+        </div>
+        <div class="field">
+          <label for="jobs-contract">Tipo de contratación</label>
+          <select id="jobs-contract"><option value="">Todos</option></select>
+        </div>
+        <div class="field">
+          <label for="jobs-schedule">Jornada</label>
+          <select id="jobs-schedule"><option value="">Toda jornada</option></select>
+        </div>
+        <div class="field">
+          <label for="jobs-zone">Ubicación</label>
+          <select id="jobs-zone"><option value="">Toda la zona</option></select>
+        </div>
+        <div class="field">
+          <label for="jobs-sort">Ordenar por</label>
+          <select id="jobs-sort">
+            <option value="recent">Más recientes</option>
+            <option value="oldest">Más antiguas</option>
+          </select>
+        </div>
+        <button id="jobs-apply" class="btn btn-primary btn-block only-mobile" type="button">Aplicar filtros</button>
+      </aside>
+
+      <div class="results-col" aria-live="polite">
+        <p id="jobs-count" class="results-count"></p>
+        <div id="jobs-list" class="cards-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== VISTA: DETALLE DE OFERTA ==================== -->
+<section id="view-empleo" class="view" hidden>
+  <div class="container detail-wrap">
+    <button id="job-back" class="back-btn" type="button">
+      <span data-icon="arrow-left" data-size="18"></span>Volver a las ofertas
+    </button>
+    <div id="job-detail"></div>
+  </div>
+</section>
+
+<!-- ==================== VISTA: ENCONTRAR PROFESIONALES ==================== -->
+<section id="view-profesionales" class="view" hidden aria-labelledby="pros-title">
+  <div class="container">
+    <header class="page-head">
+      <h1 id="pros-title">Encontrar profesionales</h1>
+      <p class="page-sub">Oficios y servicios de vecinos de Las Toscas y la zona. Mirá sus trabajos antes de contactar.</p>
+    </header>
+
+    <div class="search-bar" role="search">
+      <span class="search-icon" data-icon="search" data-size="18"></span>
+      <input id="pros-search" type="search" placeholder="Buscar por nombre, oficio, especialidad o servicio" aria-label="Buscar profesionales por nombre, oficio, especialidad o servicio" autocomplete="off">
+    </div>
+
+    <div class="list-layout">
+      <button id="pros-filter-toggle" class="btn btn-outline filters-toggle" type="button" aria-expanded="false" aria-controls="pros-filter-panel">
+        <span data-icon="sliders" data-size="18"></span>Filtros<span id="pros-filter-count" class="chip-mini" hidden>0</span>
+      </button>
+
+      <aside id="pros-filter-panel" class="filter-panel" aria-label="Filtros del directorio de profesionales" hidden>
+        <div class="filter-head">
+          <h2>Filtrar profesionales</h2>
+          <button id="pros-clear" class="link-btn" type="button">Limpiar</button>
+        </div>
+        <div class="field">
+          <label for="pros-cat">Rubro u oficio</label>
+          <select id="pros-cat"><option value="">Todos los oficios</option></select>
+        </div>
+        <div class="field">
+          <label for="pros-zone">Zona de trabajo</label>
+          <select id="pros-zone"><option value="">Toda la zona</option></select>
+        </div>
+        <div class="field">
+          <label for="pros-avail">Disponibilidad</label>
+          <select id="pros-avail"><option value="">Cualquiera</option></select>
+        </div>
+        <div class="field">
+          <label for="pros-sort">Ordenar por</label>
+          <select id="pros-sort">
+            <option value="relevant">Relevancia</option>
+            <option value="recent">Publicaciones recientes</option>
+          </select>
+        </div>
+        <button id="pros-apply" class="btn btn-primary btn-block only-mobile" type="button">Aplicar filtros</button>
+      </aside>
+
+      <div class="results-col" aria-live="polite">
+        <p id="pros-count" class="results-count"></p>
+        <div id="pros-list" class="cards-grid pros-grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VISTA: PERFIL DE PROFESIONAL ==================== -->
+<section id="view-profesional" class="view" hidden>
+  <div class="container detail-wrap detail-wrap-lg">
+    <button id="pro-back" class="back-btn" type="button">
+      <span data-icon="arrow-left" data-size="18"></span>Volver al directorio
+    </button>
+    <div id="pro-detail"></div>
+  </div>
+</section>
+<!-- ==================== VISTA: OFRECER MIS SERVICIOS ==================== -->
+<section id="view-ofrecer" class="view" hidden aria-labelledby="ofrecer-heading">
+  <div class="container form-container">
+    <header class="page-head">
+      <h1 id="ofrecer-heading">Ofrecer mis servicios</h1>
+      <p class="page-sub" id="ofrecer-sub">Creá tu perfil profesional para que los vecinos te encuentren por tu trabajo, no por tu apariencia.</p>
+    </header>
+
+    <div class="notice notice-info">
+      <span data-icon="info" data-size="19"></span>
+      <p><strong>Demostración:</strong> en una versión real, tu perfil pasaría por un proceso de validación municipal antes de aparecer en el directorio público.</p>
+    </div>
+
+    <div id="pro-form-wrap">
+      <form id="pro-form" class="form-card" novalidate>
+        <fieldset>
+          <legend><span class="step-num">1</span>Datos básicos</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="pf-name">Nombre y apellido *</label>
+              <input id="pf-name" type="text" maxlength="60" placeholder="Ej.: Marta Gómez" autocomplete="name">
+              <p class="field-error" id="pf-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="pf-phone">Teléfono de contacto *</label>
+              <input id="pf-phone" type="tel" maxlength="22" placeholder="Ej.: +54 9 3482 55-0000" autocomplete="tel">
+              <p class="field-error" id="pf-phone-err"></p>
+            </div>
+            <div class="field">
+              <label for="pf-email">Correo electrónico <span class="optional">(opcional)</span></label>
+              <input id="pf-email" type="email" maxlength="80" placeholder="Ej.: marta@ejemplo.com" autocomplete="email">
+              <p class="field-error" id="pf-email-err"></p>
+            </div>
+            <div class="field">
+              <label for="pf-business">Nombre comercial o emprendimiento <span class="optional">(opcional)</span></label>
+              <input id="pf-business" type="text" maxlength="60" placeholder="Ej.: Muebles La Cañada">
+              <p class="field-error" id="pf-business-err"></p>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><span class="step-num">2</span>Información profesional</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="pf-trade">Oficio principal *</label>
+              <select id="pf-trade"><option value="">Elegí tu oficio…</option></select>
+              <p class="field-error" id="pf-trade-err"></p>
+            </div>
+            <div class="field">
+              <label for="pf-zone">Zona donde trabajás *</label>
+              <select id="pf-zone"><option value="">Elegí tu zona…</option></select>
+              <p class="field-error" id="pf-zone-err"></p>
+            </div>
+            <div class="field">
+              <label for="pf-availability">Disponibilidad *</label>
+              <select id="pf-availability"><option value="">Elegí…</option></select>
+              <p class="field-error" id="pf-availability-err"></p>
+            </div>
+            <div class="field">
+              <label for="pf-specialties">Especialidades * <span class="optional">(separadas por comas)</span></label>
+              <input id="pf-specialties" type="text" maxlength="120" placeholder="Ej.: revoques, cielorrasos, pisos">
+              <p class="field-error" id="pf-specialties-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pf-description">Descripción de tus servicios *</label>
+            <textarea id="pf-description" maxlength="600" placeholder="Contá qué hacés, cómo trabajás y qué te diferencia. Mínimo 20 caracteres."></textarea>
+            <p class="field-error" id="pf-description-err"></p>
+          </div>
+          <div class="field">
+            <label for="pf-experience">Experiencia <span class="optional">(opcional)</span></label>
+            <input id="pf-experience" type="text" maxlength="80" placeholder="Ej.: 10 años en el oficio">
+            <p class="field-error" id="pf-experience-err"></p>
+          </div>
+          <div class="field">
+            <span class="field-label" id="pf-workmode-label">Modalidad de trabajo * <span class="optional">(marcá una o varias)</span></span>
+            <div class="check-row" id="pf-workmode" role="group" aria-labelledby="pf-workmode-label"></div>
+            <p class="field-error" id="pf-workmode-err"></p>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><span class="step-num">3</span>Fotos de tus trabajos <span class="optional">(opcional)</span></legend>
+          <div class="photo-picker">
+            <label class="photo-add" for="pro-photos">
+              <span data-icon="image" data-size="20"></span>Elegir fotos
+              <input id="pro-photos" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+            </label>
+            <p class="hint">Hasta 6 imágenes (JPG, PNG o WebP, máx. 3 MB cada una). Usá fotos de trabajos propios o con autorización para publicarlas. No se requiere una foto personal.</p>
+          </div>
+          <div id="photo-previews" class="photo-previews" aria-live="polite"></div>
+        </fieldset>
+
+        <div class="form-footer-note">
+          <span data-icon="alert" data-size="16"></span>
+          Al publicar estás creando una publicación de demostración: no se envía información a ningún servidor y solo queda guardada en este navegador.
+        </div>
+        <div class="form-actions">
+          <button id="pro-preview-btn" class="btn btn-secondary" type="button">Vista previa</button>
+          <button id="pro-submit" class="btn btn-primary" type="submit">Publicar perfil</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="pro-preview-wrap" hidden>
+      <h2 class="preview-title">Así se verá tu tarjeta en el directorio</h2>
+      <div id="pro-preview" class="preview-target"></div>
+      <div class="form-actions">
+        <button id="pro-edit-back" class="btn btn-ghost" type="button">Volver a editar</button>
+        <button id="pro-publish" class="btn btn-primary" type="button">Publicar perfil</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== VISTA: PUBLICAR BÚSQUEDA LABORAL ==================== -->
+<section id="view-publicar" class="view" hidden aria-labelledby="publicar-heading">
+  <div class="container form-container">
+    <header class="page-head">
+      <h1 id="publicar-heading">Publicar una búsqueda laboral</h1>
+      <p class="page-sub" id="publicar-sub">Para empleadores, comercios, emprendimientos y particulares de la región.</p>
+    </header>
+
+    <div class="notice notice-info">
+      <span data-icon="info" data-size="19"></span>
+      <p><strong>Demostración:</strong> en una versión real, la oferta quedaría pendiente de aprobación municipal antes de mostrarse públicamente.</p>
+    </div>
+
+    <div id="job-form-wrap">
+      <form id="job-form" class="form-card" novalidate>
+        <fieldset>
+          <legend><span class="step-num">1</span>Datos del empleador</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="jf-company">Empresa, comercio o empleador *</label>
+              <input id="jf-company" type="text" maxlength="70" placeholder="Ej.: Librería del Puente">
+              <p class="field-error" id="jf-company-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-contact">Persona de contacto *</label>
+              <input id="jf-contact" type="text" maxlength="60" placeholder="Ej.: Juan Pérez">
+              <p class="field-error" id="jf-contact-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-email">Correo electrónico *</label>
+              <input id="jf-email" type="email" maxlength="80" placeholder="Ej.: rrhh@ejemplo.com" autocomplete="email">
+              <p class="field-error" id="jf-email-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-phone">Teléfono *</label>
+              <input id="jf-phone" type="tel" maxlength="22" placeholder="Ej.: +54 9 3482 55-0000" autocomplete="tel">
+              <p class="field-error" id="jf-phone-err"></p>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><span class="step-num">2</span>Detalle del puesto</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="jf-title">Título del puesto *</label>
+              <input id="jf-title" type="text" maxlength="70" placeholder="Ej.: Atención al público para panadería">
+              <p class="field-error" id="jf-title-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-cat">Categoría laboral *</label>
+              <select id="jf-cat"><option value="">Elegí una categoría…</option></select>
+              <p class="field-error" id="jf-cat-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-contract">Tipo de contratación *</label>
+              <select id="jf-contract"><option value="">Elegí…</option></select>
+              <p class="field-error" id="jf-contract-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-schedule">Jornada y horario *</label>
+              <select id="jf-schedule"><option value="">Elegí…</option></select>
+              <p class="field-error" id="jf-schedule-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-zone">Ubicación *</label>
+              <select id="jf-zone"><option value="">Elegí…</option></select>
+              <p class="field-error" id="jf-zone-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-salary">Remuneración <span class="optional">(opcional)</span></label>
+              <input id="jf-salary" type="text" maxlength="60" placeholder="Ej.: $400.000 aprox. / A convenir">
+              <p class="field-error" id="jf-salary-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-exp">Experiencia requerida <span class="optional">(opcional)</span></label>
+              <input id="jf-exp" type="text" maxlength="60" placeholder="Ej.: 1 año en rubro similar">
+              <p class="field-error" id="jf-exp-err"></p>
+            </div>
+            <div class="field">
+              <label for="jf-deadline">Fecha límite para postularse <span class="optional">(opcional)</span></label>
+              <input id="jf-deadline" type="date">
+              <p class="field-error" id="jf-deadline-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="jf-description">Descripción del trabajo *</label>
+            <textarea id="jf-description" maxlength="800" placeholder="Contá en qué consiste el puesto y cómo es el ambiente de trabajo. Mínimo 30 caracteres."></textarea>
+            <p class="field-error" id="jf-description-err"></p>
+          </div>
+          <div class="field">
+            <label for="jf-resp">Responsabilidades principales * <span class="optional">(una por línea)</span></label>
+            <textarea id="jf-resp" maxlength="500" placeholder="Ej.:&#10;Atender el mostrador&#10;Manejar la caja"></textarea>
+            <p class="field-error" id="jf-resp-err"></p>
+          </div>
+          <div class="field">
+            <label for="jf-req">Requisitos * <span class="optional">(uno por línea)</span></label>
+            <textarea id="jf-req" maxlength="500" placeholder="Ej.:&#10;Mayor de 18 años&#10;Experiencia no excluyente"></textarea>
+            <p class="field-error" id="jf-req-err"></p>
+          </div>
+          <div class="field">
+            <label for="jf-cmethod">Método de contacto preferido *</label>
+            <select id="jf-cmethod"><option value="">Elegí…</option></select>
+            <p class="field-error" id="jf-cmethod-err"></p>
+          </div>
+        </fieldset>
+
+        <div class="form-footer-note">
+          <span data-icon="alert" data-size="16"></span>
+          La oferta no debe incluir datos personales irrelevantes ni requisitos discriminatorios (género, edad, apariencia, estado civil, etc.).
+        </div>
+        <div class="form-actions">
+          <button id="job-preview-btn" class="btn btn-secondary" type="button">Vista previa</button>
+          <button id="job-submit" class="btn btn-primary" type="submit">Publicar búsqueda</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="job-preview-wrap" hidden>
+      <h2 class="preview-title">Así se verá tu oferta en el listado</h2>
+      <div id="job-preview" class="preview-target"></div>
+      <div class="form-actions">
+        <button id="job-edit-back" class="btn btn-ghost" type="button">Volver a editar</button>
+        <button id="job-publish" class="btn btn-primary" type="button">Publicar búsqueda</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== VISTA: MI PERFIL / MIS PUBLICACIONES ==================== -->
+<section id="view-mis" class="view" hidden aria-labelledby="mis-title">
+  <div class="container">
+    <header class="page-head">
+      <h1 id="mis-title">Mi perfil / Mis publicaciones</h1>
+      <p class="page-sub">Todo lo que publiques en esta demostración queda guardado solo en este navegador.</p>
+    </header>
+
+    <div class="notice notice-info mine-note">
+      <span data-icon="info" data-size="19"></span>
+      <p>Este prototipo <strong>no incluye inicio de sesión</strong>: la identificación de usuarios y la gestión de permisos son funcionalidades de una futura etapa. Lo que ves acá son las publicaciones creadas desde este navegador durante la sesión de prueba.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Mis publicaciones">
+      <button class="tab active" id="tab-pros" role="tab" aria-selected="true" aria-controls="panel-pros" type="button">Mis servicios<span class="chip-mini" id="count-pros">0</span></button>
+      <button class="tab" id="tab-jobs" role="tab" aria-selected="false" aria-controls="panel-jobs" tabindex="-1" type="button">Mis ofertas<span class="chip-mini" id="count-jobs">0</span></button>
+      <button class="tab" id="tab-apps" role="tab" aria-selected="false" aria-controls="panel-apps" tabindex="-1" type="button">Mis postulaciones<span class="chip-mini" id="count-apps">0</span></button>
+    </div>
+
+    <div id="panel-pros" role="tabpanel" aria-labelledby="tab-pros"><div id="my-pros-list" class="cards-list"></div></div>
+    <div id="panel-jobs" role="tabpanel" aria-labelledby="tab-jobs" hidden><div id="my-jobs-list" class="cards-list"></div></div>
+    <div id="panel-apps" role="tabpanel" aria-labelledby="tab-apps" hidden><div id="my-apps-list" class="cards-list"></div></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <p class="footer-brand">Empleo Local</p>
+      <p class="footer-tag">Las Toscas · Santa Fe</p>
+      <p class="footer-text">Plataforma municipal para conectar a personas que buscan trabajo, empleadores que publican búsquedas y trabajadores independientes de la comunidad.</p>
+      <p class="footer-note">Prototipo de demostración para presentación: los datos son ficticios y no constituyen publicaciones reales.</p>
+    </div>
+    <nav class="footer-col" aria-label="Secciones del sitio">
+      <h2 class="footer-title">Secciones</h2>
+      <a href="#/">Inicio</a>
+      <a href="#/empleos">Buscar empleo</a>
+      <a href="#/profesionales">Encontrar profesionales</a>
+      <a href="#/ofrecer-servicios">Ofrecer mis servicios</a>
+      <a href="#/publicar">Publicar una búsqueda</a>
+      <a href="#/mis-publicaciones">Mis publicaciones</a>
+    </nav>
+    <div class="footer-col">
+      <h2 class="footer-title">Sobre este prototipo</h2>
+      <p class="footer-text">No requiere registro. Los formularios simulan el envío de información y nada se comparte con otros usuarios. Los currículums y datos personales no se almacenan.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2026 · Propuesta de plataforma municipal de empleo · Las Toscas, Santa Fe</div>
+  </div>
+</footer>
+
+<nav id="bottom-nav" class="bottom-nav" aria-label="Navegación rápida">
+  <a class="bn-item" href="#/" data-nav="home"><span data-icon="home" data-size="21"></span><span>Inicio</span></a>
+  <a class="bn-item" href="#/empleos" data-nav="empleos"><span data-icon="briefcase" data-size="21"></span><span>Empleos</span></a>
+  <a class="bn-item bn-publish" href="#/publicar" data-nav="publicar" aria-label="Publicar una búsqueda"><span class="bn-bubble"><span data-icon="plus" data-size="22"></span></span><span>Publicar</span></a>
+  <a class="bn-item" href="#/profesionales" data-nav="profesionales"><span data-icon="users" data-size="21"></span><span>Oficios</span></a>
+  <a class="bn-item" href="#/mis-publicaciones" data-nav="mis-publicaciones"><span data-icon="user" data-size="21"></span><span>Perfil</span></a>
+</nav>
+
+<div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+<aside id="drawer" class="drawer" hidden role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <header class="drawer-head">
+    <strong>Empleo Local</strong>
+    <button id="drawer-close" class="icon-btn" type="button" aria-label="Cerrar menú"><span data-icon="x" data-size="20"></span></button>
+  </header>
+  <nav class="drawer-nav" aria-label="Navegación principal del menú">
+    <a href="#/" data-nav="home"><span data-icon="home" data-size="19"></span>Inicio</a>
+    <a href="#/empleos" data-nav="empleos"><span data-icon="briefcase" data-size="19"></span>Buscar empleo</a>
+    <a href="#/profesionales" data-nav="profesionales"><span data-icon="users" data-size="19"></span>Encontrar profesionales</a>
+    <a href="#/ofrecer-servicios" data-nav="ofrecer-servicios"><span data-icon="user-plus" data-size="19"></span>Ofrecer mis servicios</a>
+    <a href="#/publicar" data-nav="publicar"><span data-icon="plus" data-size="19"></span>Publicar una búsqueda</a>
+    <a href="#/mis-publicaciones" data-nav="mis-publicaciones"><span data-icon="user" data-size="19"></span>Mis publicaciones</a>
+  </nav>
+  <div class="drawer-actions">
+    <a class="btn btn-outline btn-block" href="#/ofrecer-servicios">Ofrecer mis servicios</a>
+    <a class="btn btn-primary btn-block" href="#/publicar">Publicar una búsqueda</a>
+  </div>
+  <p class="drawer-note">Las Toscas, Santa Fe · Prototipo de demostración</p>
+</aside>
+
+<div id="modal-backdrop" class="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <header class="modal-head">
+      <h2 id="modal-title">Título</h2>
+      <button id="modal-close" class="icon-btn" type="button" aria-label="Cerrar ventana"><span data-icon="x" data-size="20"></span></button>
+    </header>
+    <div id="modal-body" class="modal-body"></div>
+  </div>
+</div>
+
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Visor de fotografías de trabajos">
+  <button id="lb-close" class="icon-btn lb-close" type="button" aria-label="Cerrar visor"><span data-icon="x" data-size="22"></span></button>
+  <button id="lb-prev" class="icon-btn lb-nav lb-prev" type="button" aria-label="Foto anterior"><span data-icon="chevron-left" data-size="26"></span></button>
+  <figure class="lb-figure">
+    <img id="lb-img" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+  <button id="lb-next" class="icon-btn lb-nav lb-next" type="button" aria-label="Foto siguiente"><span data-icon="chevron-right" data-size="26"></span></button>
+</div>
+
+<div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
