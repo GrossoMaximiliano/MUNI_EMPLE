@@ -5,19 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Empleo Local · Las Toscas, Santa Fe</title>
 <meta name="description" content="Plataforma municipal de empleo y oficios para Las Toscas, Santa Fe: buscá trabajo, encontrá profesionales de confianza y publicá búsquedas laborales.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#0b2a4a">
+<link rel="icon" type="image/png" href="assets/escudo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
+<div class="topbar">
+  <div class="container topbar-inner">
+    <a href="https://grossomaximiliano.github.io/MUNI_LAND/">← Sitio oficial de la Municipalidad</a>
+    <span class="topbar-info">
+      <a class="hide-xs" href="tel:03482492000">(03482) 492-000</a>
+      <span class="hide-sm">Lunes a viernes de 7:00 a 13:00 hs</span>
+    </span>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#/" data-nav="home">
-      <img class="brand-logo" src="assets/logo.png" alt="Empleo Local · Las Toscas, Santa Fe" width="447" height="447">
+    <a class="brand" href="#/" data-nav="home" aria-label="Empleo Local · Municipalidad de Las Toscas">
+      <img class="brand-logo" src="assets/escudo.png" alt="" width="46" height="46">
+      <span class="brand-text">
+        <span class="brand-small">Municipalidad de</span>
+        <span class="brand-name">Las Toscas</span>
+        <span class="brand-sub">Empleo Local</span>
+      </span>
     </a>
     <nav class="main-nav" aria-label="Navegación principal">
       <a href="#/" data-nav="home">Inicio</a>
@@ -39,6 +55,7 @@
 <!-- ==================== VISTA: INICIO ==================== -->
 <section id="view-home" class="view" aria-labelledby="home-title">
   <div class="hero">
+    <img class="hero-photo" src="assets/hero-ciudad.jpg" alt="" aria-hidden="true">
     <div class="container hero-inner">
       <p class="hero-eyebrow">Plataforma municipal de empleo y oficios</p>
       <h1 class="hero-title" id="home-title">Las oportunidades están <span class="accent">más cerca</span> de lo que pensás.</h1>
@@ -497,11 +514,19 @@
   </div>
 </section>
 <footer class="site-footer">
+  <div class="footer-flag" aria-hidden="true"></div>
   <div class="container footer-inner">
     <div class="footer-col">
-      <p class="footer-brand">Empleo Local</p>
-      <p class="footer-tag">Las Toscas · Santa Fe</p>
+      <div class="footer-brandbox">
+        <img src="assets/escudo.png" alt="" width="46" height="46">
+        <div>
+          <p class="footer-tag">Municipalidad de</p>
+          <p class="footer-brand">Las Toscas</p>
+          <p class="footer-sub">Empleo Local</p>
+        </div>
+      </div>
       <p class="footer-text">Plataforma municipal para conectar a personas que buscan trabajo, empleadores que publican búsquedas y trabajadores independientes de la comunidad.</p>
+      <p class="footer-text footer-contact">Palacio Municipal · Calle 12 N° 901 · (03482) 492-000 · <a href="mailto:produccion@lastoscas.gob.ar">produccion@lastoscas.gob.ar</a></p>
       <p class="footer-note">Prototipo de demostración para presentación: los datos son ficticios y no constituyen publicaciones reales.</p>
     </div>
     <nav class="footer-col" aria-label="Secciones del sitio">
@@ -514,7 +539,10 @@
       <a href="#/mis-publicaciones">Mis publicaciones</a>
     </nav>
     <div class="footer-col">
-      <h2 class="footer-title">Sobre este prototipo</h2>
+      <h2 class="footer-title">Programa municipal</h2>
+      <a href="https://grossomaximiliano.github.io/MUNI_LAND/">Sitio oficial de la Municipalidad</a>
+      <a href="https://grossomaximiliano.github.io/MUNI_CURSOS/">Capacitaciones gratuitas</a>
+      <h2 class="footer-title footer-title--spaced">Sobre este prototipo</h2>
       <p class="footer-text">No requiere registro. Los formularios simulan el envío de información y nada se comparte con otros usuarios. Los currículums y datos personales no se almacenan.</p>
     </div>
   </div>
@@ -534,7 +562,7 @@
 <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
 <aside id="drawer" class="drawer" hidden role="dialog" aria-modal="true" aria-label="Menú de navegación">
   <header class="drawer-head">
-    <strong>Empleo Local</strong>
+    <strong class="drawer-brand"><img src="assets/escudo.png" alt="" width="32" height="32">Empleo Local</strong>
     <button id="drawer-close" class="icon-btn" type="button" aria-label="Cerrar menú"><span data-icon="x" data-size="20"></span></button>
   </header>
   <nav class="drawer-nav" aria-label="Navegación principal del menú">

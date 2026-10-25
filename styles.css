@@ -10,27 +10,31 @@
    ========================================================= */
 
 /* ============ 1. VARIABLES ============ */
+/* Paleta compartida con el sitio institucional de la Municipalidad
+   (azul marino, azul, celeste y dorado del escudo). */
 :root {
-  --blue-50:  #eef4fc;
-  --blue-100: #dbe8f9;
-  --blue-200: #bcd2f2;
-  --blue-300: #92b6e8;
-  --blue-400: #5b8fda;
-  --blue-500: #1d5fb8;
-  --blue-600: #184fa0;
-  --blue-700: #144085;
-  --blue-800: #10315f;
-  --blue-900: #0b2240;
+  --blue-50:  #f2f8fd;
+  --blue-100: #e6f1fa;
+  --blue-200: #c6dcf0;
+  --blue-300: #93bce0;
+  --blue-400: #5fa8d3;
+  --blue-500: #1f5fa8;
+  --blue-600: #1a5294;
+  --blue-700: #123a63;
+  --blue-800: #0b2a4a;
+  --blue-900: #071d35;
+  --gold:       #c9a227;
+  --gold-light: #e0bd4a;
 
-  --bg:         #f2f6fb;
+  --bg:         #f6f8fb;
   --surface:    #ffffff;
   --surface-2:  #f7fafd;
-  --text:       #1c2b3a;
-  --text-2:     #51637a;
+  --text:       #1a2433;
+  --text-2:     #5c6a7e;
   --text-3:     #7d8ea3;
 
-  --border:        #dde6f0;
-  --border-strong: #c3d3e6;
+  --border:        #dfe5ee;
+  --border-strong: #c6d2e1;
 
   --success:      #1a7f4b;
   --success-bg:   #e7f4ec;
@@ -39,7 +43,7 @@
   --warn:         #8a5a12;
   --warn-bg:      #fdf3df;
 
-  --font-display: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
   --radius:    10px;
@@ -661,7 +665,8 @@ fieldset legend .step-num {
   font-weight: 600;
   color: var(--blue-700);
 }
-.pro-head .badge { margin-top: 2px; }
+.pro-head .badge { margin-top: 8px; white-space: nowrap; }
+.pro-head-info .pro-trade { display: flex; }
 
 .pro-specs { font-size: .82rem; color: var(--text-2); margin-bottom: 8px; }
 .pro-specs strong { color: var(--text-3); font-weight: 600; }
@@ -1410,12 +1415,84 @@ fieldset legend .step-num {
 
 .lb-nav { width: 46px; height: 46px; border-radius: 50%; }
 
+/* ============ 18. IDENTIDAD VISUAL MUNICIPAL ============
+   Alineada con el sitio oficial y la plataforma de capacitaciones */
+h1, h2, h3 { color: var(--blue-800); }
+::selection { background: var(--blue-400); color: #fff; }
 
+/* Barra institucional superior */
+.topbar { background: var(--blue-900); color: #b9cbe0; font-size: .82rem; }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 36px; }
+.topbar a { color: #dce7f3; font-weight: 600; white-space: nowrap; }
+.topbar a:hover { color: var(--gold-light); }
+.topbar-info { display: flex; align-items: center; gap: 18px; }
+.topbar-info .hide-sm { display: none; }
+@media (min-width: 900px) { .topbar-info .hide-sm { display: inline; } }
+@media (max-width: 480px) { .topbar .hide-xs { display: none; } }
 
+/* Marca con el escudo oficial (fondo transparente, sin recuadro) */
+.brand-logo { height: 46px; width: 46px; border-radius: 0; box-shadow: none; object-fit: contain; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-small { font-size: .64rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--text-2); }
+.brand-name { font-family: var(--font-display); font-size: 1.12rem; font-weight: 800; color: var(--blue-800); }
+.brand-sub { font-size: .7rem; font-weight: 600; color: var(--blue-500); }
+.main-nav a { font-family: var(--font-display); font-size: .88rem; }
+.main-nav a.active { background: var(--blue-100); color: var(--blue-500); box-shadow: inset 0 -3px 0 var(--gold); }
+@media (min-width: 768px) and (max-width: 1099px) {
+  .brand-small, .brand-sub { display: none; }
+  .header-actions .hide-sm { display: none; }
+}
+/* En celular "Publicar" y "Ofrecer servicios" ya están en la barra inferior y el menú: se libera espacio para la marca */
+@media (max-width: 520px) {
+  .header-actions .btn { display: none; }
+}
 
+/* Hero con fotografía real y velo azul institucional */
+.hero { position: relative; overflow: hidden; background: var(--blue-900); border-bottom: 0; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, rgba(7,29,53,.94) 0%, rgba(11,42,74,.84) 50%, rgba(18,58,99,.55) 100%);
+}
+.hero-inner { position: relative; z-index: 1; padding-top: 56px; padding-bottom: 52px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: none; padding: 0; border-radius: 0;
+  font-family: var(--font-display); letter-spacing: .14em; color: var(--blue-400);
+}
+.hero-eyebrow::before { content: ""; width: 26px; height: 3px; border-radius: 3px; background: var(--gold); }
+.hero-title { color: #fff; }
+.hero-title .accent { color: var(--gold-light); }
+.hero-sub { color: #d3e1ef; }
+.hero .btn-primary { background: var(--gold); color: var(--blue-900); }
+.hero .btn-primary:hover { background: #b38e1d; color: var(--blue-900); }
+.hero .btn-secondary { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); color: #fff; }
+.hero .btn-secondary:hover { background: #fff; color: var(--blue-800); }
+.hero-link { color: #dce7f3; }
+.hero-link:hover { color: var(--gold-light); }
 
+/* Títulos de sección con filete dorado, como en el sitio oficial */
+.section-title { color: var(--blue-800); }
+.home-section > .section-title::before,
+.section-head .section-title::before {
+  content: ""; display: block; width: 26px; height: 3px; border-radius: 3px;
+  background: var(--gold); margin-bottom: 10px;
+}
 
+/* Footer igual al del sitio oficial */
+.site-footer { background: var(--blue-900); color: #9fb6cf; }
+.footer-flag { height: 4px; background: linear-gradient(90deg, var(--blue-400) 0 33.3%, #fff 33.3% 66.6%, var(--blue-400) 66.6%); }
+.footer-brandbox { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer-brandbox img { width: 46px; height: 46px; filter: brightness(0) invert(1); }
+.footer-brandbox .footer-tag { margin: 0; font-size: .64rem; text-transform: uppercase; letter-spacing: .16em; color: #9fb6cf; }
+.footer-brandbox .footer-brand { margin: 0; line-height: 1.1; }
+.footer-sub { font-size: .72rem; font-weight: 600; color: var(--gold-light); }
+.footer-contact { margin-top: 10px; }
+.footer-contact a { color: #dce7f3; }
+.footer-title { color: #fff; letter-spacing: .12em; }
+.footer-title--spaced { margin-top: 18px; }
+.footer-col a:hover { color: var(--gold-light); }
 
-
-
-
+/* Menú lateral con el escudo */
+.drawer-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--blue-800); }
+.drawer-brand img { width: 32px; height: 32px; }

@@ -717,8 +717,8 @@ function proCard(pro) {
       <div class="pro-head-info">
         <h3><a href="#/profesionales/${esc(pro.id)}">${esc(pro.name)}</a></h3>
         <p class="pro-trade">${icon(TRADE_ICONS[pro.trade] || 'wrench', 15)}${esc(pro.trade)}</p>
+        ${badgeAvail(pro.availability)}
       </div>
-      ${badgeAvail(pro.availability)}
     </div>
     <p class="pro-specs"><strong>Especialidades:</strong> ${esc(pro.specialties.join(' · '))}</p>
     <p class="pro-desc">${esc(pro.short)}</p>
