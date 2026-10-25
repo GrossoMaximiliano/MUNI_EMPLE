@@ -298,7 +298,13 @@ const DEMO_PROS = [
     services: ['Levantamiento de paredes y cercos', 'Revoques gruesos y finos', 'Contrapisos y carpeta para pisos', 'Reparaciones y remodelaciones en general'],
     experience: '15 años', zone: 'Las Toscas', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0101', email: 'carlos.medina@ejemplo.com', whatsapp: true,
-    featured: true, photos: 3
+    featured: true, photos: [
+      'assets/trabajos/albanileria-1.jpg',
+      'assets/trabajos/albanileria-2.jpg',
+      'assets/trabajos/albanileria-3.jpg',
+      'assets/trabajos/albanileria-4.jpg',
+      'assets/trabajos/albanileria-5.jpg'
+    ]
   },
   {
     id: 'p2', name: 'Andrea Sosa', trade: 'Electricidad',
@@ -308,7 +314,9 @@ const DEMO_PROS = [
     services: ['Instalaciones eléctricas nuevas', 'Reparación de cortocircuitos y fallas', 'Colocación de tableros, térmicas y disyuntores', 'Instalación de artefactos y luminarias'],
     experience: '8 años', zone: 'Las Toscas', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0102', email: 'andrea.sosa@ejemplo.com', whatsapp: true,
-    featured: true, photos: 3
+    featured: true, photos: [
+      'assets/trabajos/electricidad-1.jpg'
+    ]
   },
   {
     id: 'p3', name: 'Ramón Ferreyra', trade: 'Carpintería',
@@ -318,7 +326,12 @@ const DEMO_PROS = [
     services: ['Muebles a medida: bajo mesada, placards y estanterías', 'Puertas, ventanas y marcos de madera', 'Reparación de sillas, mesas y banquetas', 'Pisos de madera y entablonados'],
     experience: '12 años', zone: 'Las Toscas', availability: 'Agenda limitada', workMode: 'En taller o local',
     phone: '+54 9 3482 55-0103', email: 'ramon.ferreyra@ejemplo.com', whatsapp: true,
-    featured: true, photos: 4
+    featured: true, photos: [
+      'assets/trabajos/carpinteria-1.jpg',
+      'assets/trabajos/carpinteria-2.jpg',
+      'assets/trabajos/carpinteria-3.jpg',
+      'assets/trabajos/carpinteria-4.jpg'
+    ]
   }
 ];
 DEMO_PROS.push(
@@ -330,7 +343,10 @@ DEMO_PROS.push(
     services: ['Instalación y reparación de sanitarios', 'Colocación de calefones y termotanques', 'Detección y arreglo de filtraciones', 'Destapaciones y mantenimiento preventivo'],
     experience: '10 años', zone: 'Las Toscas', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0104', email: '', whatsapp: true,
-    featured: false, photos: 2
+    featured: false, photos: [
+      'assets/trabajos/plomeria-1.jpg',
+      'assets/trabajos/plomeria-2.jpg'
+    ]
   },
   {
     id: 'p5', name: 'Marcela Ojeda', trade: 'Pintura',
@@ -340,7 +356,11 @@ DEMO_PROS.push(
     services: ['Pintura interior y exterior', 'Enduidos, lijanados y texturados', 'Pintura de frentes y rejas', 'Barnizados y restauración de aberturas'],
     experience: '9 años', zone: 'Región (varias localidades)', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0105', email: 'marcela.ojeda@ejemplo.com', whatsapp: true,
-    featured: false, photos: 3
+    featured: false, photos: [
+      'assets/trabajos/pintura-1.jpg',
+      'assets/trabajos/pintura-2.jpg',
+      'assets/trabajos/pintura-3.jpg'
+    ]
   },
   {
     id: 'p6', name: 'Hugo Ledesma', trade: 'Herrería',
@@ -350,7 +370,7 @@ DEMO_PROS.push(
     services: ['Rejas, portones y barandales', 'Estructuras para techos y carpas', 'Soldadura en general', 'Reparación de portones y aberturas metálicas'],
     experience: '18 años', zone: 'Las Toscas', availability: 'No disponible por ahora', workMode: 'En taller o local',
     phone: '+54 9 3482 55-0106', email: '', whatsapp: false,
-    featured: false, photos: 2
+    featured: false, photos: 0
   },
   {
     id: 'p7', name: 'Sonia Villalba', trade: 'Jardinería y mantenimiento',
@@ -360,7 +380,12 @@ DEMO_PROS.push(
     services: ['Diseño y parquización de espacios verdes', 'Poda de arbustos y setos', 'Instalación y ajuste de riego', 'Mantenimiento mensual de jardines'],
     experience: '7 años', zone: 'Las Toscas', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0107', email: 'sonia.villalba@ejemplo.com', whatsapp: true,
-    featured: true, photos: 3
+    featured: true, photos: [
+      'assets/trabajos/jardineria-1.jpg',
+      'assets/trabajos/jardineria-2.jpg',
+      'assets/trabajos/jardineria-3.jpg',
+      'assets/trabajos/jardineria-4.jpg'
+    ]
   }
 );
 DEMO_PROS.push(
@@ -372,7 +397,10 @@ DEMO_PROS.push(
     services: ['Service general de motor', 'Frenos, amortiguación y suspensión', 'Diagnóstico de inyección electrónica', 'Electricidad del automotor'],
     experience: '14 años', zone: 'Las Toscas', availability: 'Agenda limitada', workMode: 'En taller o local',
     phone: '+54 9 3482 55-0108', email: 'damian.ayala@ejemplo.com', whatsapp: true,
-    featured: false, photos: 2
+    featured: false, photos: [
+      'assets/trabajos/mecanica-1.jpg',
+      'assets/trabajos/mecanica-2.jpg'
+    ]
   },
   {
     id: 'p9', name: 'Fabián Ríos', trade: 'Refrigeración',
@@ -382,7 +410,9 @@ DEMO_PROS.push(
     services: ['Instalación y carga de aires acondicionados', 'Reparación de heladeras y freezers', 'Mantenimiento de cámaras y exhibidoras', 'Service de pretemporada para aires'],
     experience: '11 años', zone: 'Región (varias localidades)', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0109', email: 'fabian.rios@ejemplo.com', whatsapp: true,
-    featured: true, photos: 3
+    featured: true, photos: [
+      'assets/trabajos/refrigeracion-1.jpg'
+    ]
   },
   {
     id: 'p10', name: 'Valeria Gómez', trade: 'Informática y reparación de equipos',
@@ -392,7 +422,11 @@ DEMO_PROS.push(
     services: ['Formateo e instalación de programas', 'Limpieza de virus y optimización', 'Reparación de notebooks y PC de escritorio', 'Mantenimiento de impresoras'],
     experience: '6 años', zone: 'Las Toscas', availability: 'Disponible ahora', workMode: 'En taller o local',
     phone: '+54 9 3482 55-0110', email: 'valeria.gomez@ejemplo.com', whatsapp: true,
-    featured: false, photos: 2
+    featured: false, photos: [
+      'assets/trabajos/informatica-1.jpg',
+      'assets/trabajos/informatica-2.jpg',
+      'assets/trabajos/informatica-3.jpg'
+    ]
   },
   {
     id: 'p11', name: 'Rosa Chamorro', trade: 'Limpieza',
@@ -414,7 +448,10 @@ DEMO_PROS.push(
     services: ['Cortes, color y mechas', 'Peinados para eventos y fiestas', 'Tratamientos capilares', 'Atención de niños y toda la familia'],
     experience: '10 años', zone: 'Las Toscas', availability: 'Disponible ahora', workMode: 'En taller o local',
     phone: '+54 9 3482 55-0112', email: 'mirta.benitez@ejemplo.com', whatsapp: true,
-    featured: false, photos: 3
+    featured: false, photos: [
+      'assets/trabajos/peluqueria-1.jpg',
+      'assets/trabajos/peluqueria-2.jpg'
+    ]
   },
   {
     id: 'p13', name: 'Julio Cáceres', trade: 'Gastronomía',
@@ -424,7 +461,13 @@ DEMO_PROS.push(
     services: ['Catering para eventos y reuniones', 'Tortas y postres por encargo', 'Mesas dulces temáticas', 'Viandas y comida casera por encargo'],
     experience: '9 años', zone: 'Las Toscas', availability: 'Agenda limitada', workMode: 'Según el servicio',
     phone: '+54 9 3482 55-0113', email: 'julio.caceres@ejemplo.com', whatsapp: true,
-    featured: false, photos: 4
+    featured: false, photos: [
+      'assets/trabajos/gastronomia-1.jpg',
+      'assets/trabajos/gastronomia-2.jpg',
+      'assets/trabajos/gastronomia-3.jpg',
+      'assets/trabajos/gastronomia-4.jpg',
+      'assets/trabajos/gastronomia-5.jpg'
+    ]
   },
   {
     id: 'p14', name: 'Elena Ramírez', trade: 'Costura',
@@ -434,7 +477,10 @@ DEMO_PROS.push(
     services: ['Arreglos y ajustes de ropa', 'Cortinados y fundas', 'Uniformes escolares y de trabajo', 'Prendas confeccionadas a medida'],
     experience: '20 años', zone: 'Las Toscas', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0114', email: '', whatsapp: false,
-    featured: false, photos: 2
+    featured: false, photos: [
+      'assets/trabajos/costura-1.jpg',
+      'assets/trabajos/costura-2.jpg'
+    ]
   },
   {
     id: 'p15', name: 'Pedro Franco', trade: 'Transporte',
@@ -444,12 +490,13 @@ DEMO_PROS.push(
     services: ['Fletes dentro y fuera de la ciudad', 'Mudanzas de departamentos y oficinas', 'Acarreo de materiales de construcción', 'Traslado de muebles y electrodomésticos'],
     experience: '8 años', zone: 'Región (varias localidades)', availability: 'Disponible ahora', workMode: 'A domicilio',
     phone: '+54 9 3482 55-0115', email: 'pedro.franco@ejemplo.com', whatsapp: true,
-    featured: false, photos: 2
+    featured: false, photos: 0
   }
 );
 /* ============ 6) ILUSTRACIONES DE TRABAJOS Y STORE ============ */
-/* Nunca se usan retratos personales: las fotos de demostración son
-   ilustraciones SVG generadas con el ícono del oficio. */
+/* Los perfiles de demostración usan fotos de ejemplo del oficio (trabajos y
+   herramientas, sin retratos), con licencia libre: ver CREDITOS-FOTOS.md.
+   Si un perfil indica solo una cantidad, se generan ilustraciones SVG. */
 const PHOTO_PALETTES = [
   ['#e6eefb', '#c9dcf5', '#1d5fb8'],
   ['#e9f1e9', '#cfe4cf', '#2f6b3a'],
@@ -645,7 +692,8 @@ function renderLightbox() {
   const img = $('#lb-img');
   img.src = photos[index];
   img.alt = `${lightboxData.altBase} (${index + 1} de ${photos.length})`;
-  $('#lb-cap').textContent = `Ilustración · ${index + 1} de ${photos.length}`;
+  const kind = String(photos[index]).startsWith('data:image/svg') ? 'Ilustración' : 'Foto';
+  $('#lb-cap').textContent = `${kind} · ${index + 1} de ${photos.length}`;
   const multiple = photos.length > 1;
   $('#lb-prev').hidden = !multiple;
   $('#lb-next').hidden = !multiple;
@@ -710,7 +758,9 @@ function jobCard(job) {
 }
 
 function proCard(pro) {
-  const photos = photosOf(pro).slice(0, 3);
+  const allPhotos = photosOf(pro);
+  const photos = allPhotos.slice(0, 3);
+  const extra = allPhotos.length - photos.length;
   return `<article class="card pro-card">
     <div class="pro-head">
       ${avatarHtml(pro)}
@@ -723,8 +773,12 @@ function proCard(pro) {
     <p class="pro-specs"><strong>Especialidades:</strong> ${esc(pro.specialties.join(' · '))}</p>
     <p class="pro-desc">${esc(pro.short)}</p>
     <p class="pro-zone">${icon('map-pin', 14)}${esc(pro.zone)}</p>
-    ${photos.length ? `<div class="pro-thumbs">${photos.map((src, i) =>
-      `<img src="${src}" alt="Trabajo de ${esc(pro.name)} ${i + 1}" loading="lazy">`).join('')}</div>` : ''}
+    ${photos.length ? `<div class="pro-thumbs">${photos.map((src, i) => {
+      const img = `<img src="${src}" alt="Trabajo de ${esc(pro.name)} ${i + 1}" loading="lazy">`;
+      return extra > 0 && i === photos.length - 1
+        ? `<span class="pro-thumb-more">${img}<span aria-label="${extra} fotos más">+${extra}</span></span>`
+        : img;
+    }).join('')}</div>` : ''}
     <div class="card-actions">
       <a class="btn btn-outline btn-sm" href="#/profesionales/${esc(pro.id)}">Ver perfil</a>
       <button class="btn btn-primary btn-sm" type="button" data-contact="${esc(pro.id)}">Contactar</button>
