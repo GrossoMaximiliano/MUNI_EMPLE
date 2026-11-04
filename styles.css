@@ -1001,6 +1001,8 @@ fieldset legend .step-num {
   gap: 0 18px;
 }
 @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+/* Si una etiqueta ocupa dos líneas, el campo de al lado queda alineado */
+.form-grid > .field > label:first-child { flex-grow: 1; }
 
 .form-footer-note {
   display: flex;
@@ -1281,6 +1283,7 @@ fieldset legend .step-num {
 .footer-title { font-family: var(--font-display); font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: #e3ecf7; margin-bottom: 12px; }
 .footer-col a { display: block; padding: 4px 0; color: #b9c9de; font-size: .9rem; border-radius: 4px; }
 .footer-col a:hover { color: #fff; }
+.footer-col .footer-note a { display: inline; padding: 0; font-size: inherit; text-decoration: underline; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 14px 0; font-size: .78rem; color: #7d93b1; }
 
 .drawer-backdrop {
